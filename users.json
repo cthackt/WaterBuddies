@@ -1,0 +1,62 @@
+[
+   {
+      "name": "John Doe",
+      "age": 30,
+      "email": "john.doe@example.com",
+      "role": "admin"
+   },
+   {
+      "name": "Jane Smith",
+      "age": 25,
+      "email": "jane.smith@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Michael Johnson",
+      "age": 40,
+      "email": "michael.johnson@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Emily Brown",
+      "age": 28,
+      "email": "emily.brown@example.com",
+      "role": "user"
+   },
+   {
+      "name": "David Wilson",
+      "age": 35,
+      "email": "david.wilson@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Sarah Taylor",
+      "age": 32,
+      "email": "sarah.taylor@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Christopher Martinez",
+      "age": 27,
+      "email": "christopher.martinez@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Amanda Anderson",
+      "age": 33,
+      "email": "amanda.anderson@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Daniel Thomas",
+      "age": 29,
+      "email": "daniel.thomas@example.com",
+      "role": "user"
+   },
+   {
+      "name": "Jessica Garcia",
+      "age": 31,
+      "email": "jessica.garcia@example.com",
+      "role": "user"
+   }
+]
