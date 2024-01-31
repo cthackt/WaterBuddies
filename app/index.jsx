@@ -10,12 +10,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <>
+      <Link href="/login" asChild>
+        <Button title='Login'/>
+      </Link>
+
       <FlatList
         data={users}
         contentContainerStyle={{ gap: 5 }}
         renderItem={({ item }) => <Card item={item} />}
       />
-    <StatusBar style="auto" />
+      <StatusBar style="auto" />
     </>
 
     // <NavigationContainer>
@@ -46,6 +50,18 @@ const Card = ({ item }) => {
       <Link href={`/${item.name}`} asChild>
         <Pressable style={styles.navbutton}>
           <Text>{item.name}</Text>
+        </Pressable>
+      </Link>
+    </>
+  )
+}
+
+const DumbCard = ({ text }) => {
+  return (
+    <>
+      <Link href={`/${text}`} asChild>
+        <Pressable style={styles.navbutton}>
+          <Text>{text}</Text>
         </Pressable>
       </Link>
     </>
