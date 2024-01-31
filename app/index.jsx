@@ -1,10 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable, FlatList } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import LotsOfStyles from '../components/LotsOfStyles';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Flexample from '../components/Flexample';
-import PressMe from '../components/Pressable';
+
 import { Link } from 'expo-router';
 import users from '../users.json'
 
@@ -18,6 +15,7 @@ export default function App() {
         contentContainerStyle={{ gap: 5 }}
         renderItem={({ item }) => <Card item={item} />}
       />
+    <StatusBar style="auto" />
     </>
 
     // <NavigationContainer>
@@ -54,42 +52,42 @@ const Card = ({ item }) => {
   )
 }
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <>
-      <Button
-        title="Go to Jane's profile"
-        onPress={() =>
-          navigation.navigate('Profile', { name: 'Jane' })
-        }
-      />
-      <Button
-        title="Go to Cas's profile"
-        onPress={() =>
-          navigation.navigate('Profile', { name: 'Cas' })
-        }
-      />
-      <Button
-        title="Go to Flexample"
-        onPress={() =>
-          navigation.navigate('Flexample')
-        }
-      />
-      <Button
-        title="Go to Pressable example"
-        onPress={() =>
-          navigation.navigate('PressMe')
-        }
-      />
-      <Button
-        title="Go to Pressable example"
-        onPress={() =>
-          navigation.navigate('PressMe')
-        }
-      />
-    </>
-  );
-};
+// const HomeScreen = ({ navigation }) => {
+//   return (
+//     <>
+//       <Button
+//         title="Go to Jane's profile"
+//         onPress={() =>
+//           navigation.navigate('Profile', { name: 'Jane' })
+//         }
+//       />
+//       <Button
+//         title="Go to Cas's profile"
+//         onPress={() =>
+//           navigation.navigate('Profile', { name: 'Cas' })
+//         }
+//       />
+//       <Button
+//         title="Go to Flexample"
+//         onPress={() =>
+//           navigation.navigate('Flexample')
+//         }
+//       />
+//       <Button
+//         title="Go to Pressable example"
+//         onPress={() =>
+//           navigation.navigate('PressMe')
+//         }
+//       />
+//       <Button
+//         title="Go to Pressable example"
+//         onPress={() =>
+//           navigation.navigate('PressMe')
+//         }
+//       />
+//     </>
+//   );
+// };
 
 const styles = StyleSheet.create({
   navbutton: {
