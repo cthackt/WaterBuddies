@@ -27,9 +27,11 @@ const PressMe = () => {
                },
                styles.wrapperCustom,
             ]}>
+
             {({ pressed }) => (
                <Text style={styles.text}>{pressed ? 'Pressed!' : 'Press Me or Long Press Me'}</Text>
             )}
+            
          </Pressable>
          <View style={styles.logBox}>
             <Text testID="pressable_press_console">{textLog}</Text>

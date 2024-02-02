@@ -37,6 +37,7 @@ export default CreateAccount = () => {
             placeholder="password"
          />
          <Button onPress={() => handleCreateAccount(name, email, password)} title='Create account' />
+
       </SafeAreaView>
    )
 }
@@ -61,8 +62,8 @@ const handleCreateAccount = async (name, email, pw) => {
       }
 
       const json = await response.json();
-      console.log(json);
+      alert('Account created!')
    } catch (error) {
-      console.error('Error:', error);
+      alert('Error: ', error)
    } 
 }

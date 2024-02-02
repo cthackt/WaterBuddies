@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable, FlatList, SafeAreaView } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Btn from '../components/Btn';
 import { Link } from 'expo-router';
 import users from '../users.json';
 
