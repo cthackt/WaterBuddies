@@ -1,13 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, TextInput, SafeAreaView, Button } from 'react-native';
+import React from "react";
+import { Text, View, SafeAreaView, TextInput, StyleSheet, Button } from 'react-native';
 
-export default Login = () => {
+export default CreateAccount = () => {
 
    const [email, setEmail] = React.useState('');
    const [password, setPassword] = React.useState('');
+   const [name, setName] = React.useState('');
+
+   const styles = StyleSheet.create({
+      input: {
+         height: 40,
+         margin: 12,
+         borderWidth: 1,
+         padding: 10,
+      },
+   });
 
    return (
       <SafeAreaView>
+         <TextInput
+            style={styles.input}
+            onChangeText={setName}
+            value={name}
+            placeholder="name"
+         />
          <TextInput
             style={styles.input}
             onChangeText={setEmail}
@@ -20,20 +36,21 @@ export default Login = () => {
             value={password}
             placeholder="password"
          />
-         <Button onPress={() => handleLogin(email, password)} title='Login' />
+         <Button onPress={() => handleCreateAccount(name, email, password)} title='Create account' />
       </SafeAreaView>
    )
 }
 
-const handleLogin = async (email, pw) => {
+const handleCreateAccount = async (name, email, pw) => {
    try {
-      const response = await fetch("http://localhost:5000/api/users/login", {
+      const response = await fetch("http://localhost:5000/api/users/", {
          method: 'POST',
          headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
          },
          body: JSON.stringify({
+            name: name,
             email: email,
             password: pw,
           }),
@@ -49,12 +66,3 @@ const handleLogin = async (email, pw) => {
       console.error('Error:', error);
    } 
 }
-
-const styles = StyleSheet.create({
-   input: {
-      height: 40,
-      margin: 12,
-      borderWidth: 1,
-      padding: 10,
-   },
-});

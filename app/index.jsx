@@ -1,26 +1,57 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Pressable, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, Pressable, FlatList, SafeAreaView } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import Btn from '../components/Btn';
 import { Link } from 'expo-router';
-import users from '../users.json'
+import users from '../users.json';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <>
-      <Link href="/login" asChild>
-        <Button title='Login'/>
-      </Link>
 
-      <FlatList
-        data={users}
-        contentContainerStyle={{ gap: 5 }}
-        renderItem={({ item }) => <Card item={item} />}
-      />
-      <StatusBar style="auto" />
-    </>
+  const styles = StyleSheet.create({
+    navbutton: {
+      backgroundColor: 'lightgray',
+      height: '10vh',
+      margin: 15,
+      flex: 1,
+      justifyContent: 'center',
+
+    },
+    container: {
+      flex: 1,
+      flexDirection: "row"
+    }
+  });
+
+  return (
+
+    <SafeAreaView style={styles.container}>
+      <Link href="/login" asChild>
+        <Pressable style={styles.navbutton}>
+          <Text style={{ textAlign: 'center' }}>Login</Text>
+        </Pressable>
+      </Link>
+      <Link href="/createAccount" asChild>
+        <Pressable style={styles.navbutton}>
+          <Text style={{ textAlign: 'center' }}>Create account</Text>
+        </Pressable>
+      </Link>
+    </SafeAreaView>
+
+
+    // <>
+    //   <Link href="/login" asChild>
+    //     <Button title='Login'/>
+    //   </Link>
+
+    //   <FlatList
+    //     data={users}
+    //     contentContainerStyle={{ gap: 5 }}
+    //     renderItem={({ item }) => <Card item={item} />}
+    //   />
+    //   <StatusBar style="auto" />
+    // </>
 
     // <NavigationContainer>
     //   {/* <View style={styles.container}>
@@ -105,9 +136,3 @@ const DumbCard = ({ text }) => {
 //   );
 // };
 
-const styles = StyleSheet.create({
-  navbutton: {
-    backgroundColor: 'lightgray',
-    padding: 30,
-  },
-});
