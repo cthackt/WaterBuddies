@@ -1,9 +1,9 @@
 import { Stack } from "expo-router"
-import { createContext, useContext } from "react"
 
 export default RootLayout = () => {
 
    const AuthContext = createContext()
+   const [token, setToken] = useState('')
 
    return (
       <Stack>

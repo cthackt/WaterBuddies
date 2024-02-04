@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "@reduxjs/toolkit": "^2.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "expo": "~50.0.4",
