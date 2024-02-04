@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, SafeAreaView, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default Login = () => {
 
    const [email, setEmail] = React.useState('');
    const [password, setPassword] = React.useState('');
+   const [token, setToken] = useState('')
 
    return (
       <SafeAreaView>
@@ -26,6 +28,8 @@ export default Login = () => {
 }
 
 const handleLogin = async (email, pw) => {
+   const navigation = useNavigation()
+
    try {
       const response = await fetch("http://localhost:5000/api/users/login", {
          method: 'POST',
@@ -44,7 +48,9 @@ const handleLogin = async (email, pw) => {
       }
 
       const json = await response.json();
-      console.log(json);
+      console.log(json.token);
+
+      navigation.navigate('User'); 
    } catch (error) {
       console.error('Error:', error);
    } 
