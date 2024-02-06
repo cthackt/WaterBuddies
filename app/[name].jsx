@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import users from '../users.json'
+import { useSelector } from 'react-redux';
 import { Stack } from 'expo-router';
 
 export default UserPage = () => {

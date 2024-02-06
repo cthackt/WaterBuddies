@@ -38,11 +38,14 @@ const login = async (userData) => {
        }),
    });
 
-   if (response.data) {
-      localStorage.setItem('user', JSON.stringify(response.data))
+   const res = await response.json()
+
+   if (res) {
+      localStorage.setItem('user', JSON.stringify(res))
    }
 
-   return response.data
+   console.log("response: ", res)
+   return res
 }
 
 // Logout user
